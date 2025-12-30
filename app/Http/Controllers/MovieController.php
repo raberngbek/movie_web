@@ -65,7 +65,7 @@ class MovieController extends Controller
         $movieshow = Http::withToken(config('services.tmdb.token'))
         ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=credits,videos,images')
         ->json();   
- 
+        // dump($movieshow);
  
         // dump($movieshow);
         return view('show',
