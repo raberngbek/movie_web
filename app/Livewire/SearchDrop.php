@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class SearchDrop extends Component
 {
-    public $search = '';
+    public $search = '232d';
     public function render()
     {
         $searchResults = [];
