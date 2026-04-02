@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class SearchDrop extends Component
 {
-    public $search = '';
+    public $search = '232d';
     public function render()
     {
         $searchResults = [];
@@ -18,7 +18,7 @@ class SearchDrop extends Component
             ->json()['results'];
             
     }
-
+    
     return view('livewire.search-drop', [
         'searchResults' => collect($searchResults)->take(7),
     ]);
