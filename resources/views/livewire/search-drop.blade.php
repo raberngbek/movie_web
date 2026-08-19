@@ -1,14 +1,14 @@
-<div class="relative mt-3 md:mt-0">
+<div class="relative mt-3 md:mt-0" x-data="{ isOpen: true }">
     <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
         🔍
     </span>
 
-    <input wire:model.debounce.500ms="$search" type="text" class="bg-gray-800 text-sm text-white rounded-full w-64 px-4 pl-10 py-1 focus:outline-none focus:shadow-outline"
+    <input wire:model.live.debounce.300ms="search" type="text" class="bg-gray-800 text-sm text-white rounded-full w-64 px-4 pl-10 py-1 focus:outline-none focus:shadow-outline"
            placeholder="Search...">
     <div class="spinner spinner-md ml-2"></div>
 
-    @if(strlen($search) > 2)
-        <div class="absolute bg-gray-800 rounded w-64 text-sm mt-4 z-50">
+    @if(strlen($search) >= 2)
+        <div class="absolute z-50 bg-gray-800 rounded w-64 text-sm mt-4" x-show="isOpen">
             @if($searchResults->count() >0)
             <ul class="">
                 @foreach($searchResults as $result)

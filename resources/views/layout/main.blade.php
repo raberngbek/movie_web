@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Movie App</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     @livewireStyles
 </head>
@@ -35,11 +35,11 @@
                 </li>
 
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">TV Shows</a>
+                    <a href="{{ route('shows.index') }}" class="hover:text-gray-300">TV Shows</a>
                 </li>
 
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-300">Actors</a>
+                    <a href="{{ route('actors.index') }}" class="hover:text-gray-300">Actors</a>
                 </li>
             </ul>
 
